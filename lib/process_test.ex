@@ -17,7 +17,7 @@ defmodule ProcessTest do
         IO.puts "Process is still alive after sigkill"
         Porcelain.Process.stop(proc)
         if !Porcelain.Process.alive?(proc) do
-          IO.puts "stop killed process"
+          IO.puts "Porcelain reports 'stop' killed process, but check ps -aux | grep sleep to verify."
         else
           IO.puts "Process is still alive after stop"          
         end
