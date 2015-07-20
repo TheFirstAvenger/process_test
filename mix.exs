@@ -27,6 +27,6 @@ defmodule ProcessTest.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [:erlexec, git: "https://github.com/saleyn/erlexec"]
+    [{:erlexec, git: "https://github.com/saleyn/erlexec"}]
   end
 end
