@@ -4,7 +4,7 @@ defmodule ProcessTest do
     if !Porcelain.Driver.Goon.check_goon_version(path) do
       raise "Goon not found. Download: https://github.com/alco/goon/releases"
     end
-    proc = Porcelain.spawn("/bin/bash", ["-c","sleep 15"])
+    proc = Porcelain.spawn("/bin/bash", ["-c","sleep 15"], [out: IO.stream(:stdout, :line)])
     Porcelain.Process.signal(proc, :int)
     if !Porcelain.Process.alive?(proc) do
       IO.puts "sigint killed process"
