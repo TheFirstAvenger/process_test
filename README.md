@@ -1,7 +1,7 @@
 ProcessTest
 ===========
 
-Install Goon: https://github.com/alco/goon/releases
+Install Goon somewhere in your PATH: https://github.com/alco/goon/releases
 and run with
 
     iex -S mix
