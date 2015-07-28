@@ -30,7 +30,7 @@ defmodule ProcessTest do
   end
 
   defp do_monitor(proc) do
-    if (Porcelain.Process.alive?(proc))
+    if (Porcelain.Process.alive?(proc)) do
       IO.puts "It's Alive"
       :timer.sleep(2000)
       do_monitor(proc)
