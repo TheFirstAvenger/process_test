@@ -39,4 +39,11 @@ defmodule ProcessTest do
     end
   end
 
+  def test3 do
+    Porcelain.spawn_shell("sleep 5")
+    |> Porcelain.Process.await
+    IO.puts "completed"
+    
+  end
+
 end
