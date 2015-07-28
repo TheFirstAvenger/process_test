@@ -50,5 +50,10 @@ defmodule ProcessTest do
     proc = Porcelain.spawn_shell("echo hello")
     do_monitor(proc)
   end
+  
+  def test5 do
+    proc = Porcelain.spawn_shell("echo hello\nexit")
+    do_monitor(proc)
+  end
 
 end
