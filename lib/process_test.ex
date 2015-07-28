@@ -25,7 +25,7 @@ defmodule ProcessTest do
     end
   end
   def test2 do
-    proc = Porcelain.spawn("/bin/bash", ["-c","sleep 15"], [out: IO.stream(:stdout, :line)])
+    proc = Porcelain.spawn_shell("sleep 15")
     do_monitor(proc)
   end
 
