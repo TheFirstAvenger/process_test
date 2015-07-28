@@ -24,4 +24,19 @@ defmodule ProcessTest do
       end
     end
   end
+  def test2 do
+    proc = Porcelain.spawn("/bin/bash", ["-c","sleep 15"], [out: IO.stream(:stdout, :line)])
+    do_monitor(proc)
+  end
+
+  defp do_monitor(proc) do
+    if (Porcelain.Process.alive?(proc))
+      IO.puts "It's Alive"
+      :timer.sleep(2000)
+      do_monitor(proc)
+    else
+      IO.puts "It's Dead"
+    end
+  end
+
 end
