@@ -45,5 +45,10 @@ defmodule ProcessTest do
     IO.puts "completed"
     
   end
+  
+  def test4 do
+    proc = Porcelain.spawn_shell("echo hello")
+    do_monitor(proc)
+  end
 
 end
